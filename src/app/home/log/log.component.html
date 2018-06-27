@@ -2,22 +2,26 @@
 	<div class="transparent-white-container">
 		<div class="container-fluid">
 			<div class="row no-margin">
-				<!--{{counter| async}}-->
+				{{counter.data | async}}
 				<div class="data-table col-12 nopad">
 					<div class="table-responsive col-12  nopad">
 						<table class="table table-hover table-striped mb-0">
 							<thead>
 								<tr>
 									<th scope="col">Status</th>
+									<th scope="col">x</th>
+									<th scope="col">y</th>
 									<th scope="col"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr *ngFor="let item of array let i = index">
 									<td scope="col">{{item}}</td>
+										<td scope="col">{{message[i].x}}</td>
+											<td scope="col">{{message[i].y}}</td>
 									<td>
 										<div class="row no-gutters table-action">
-											<div class="col text-center"><i class="fa fa-pencil cursor" aria-hidden="true" (click)='goto(i,item)'></i></div>
+											<div class="col text-center"><i class="fa fa-pencil cursor" aria-hidden="true" (click)='goto(i,item,message[i].x,message[i].y)'></i></div>
 										</div>
 									</td>
 								</tr>

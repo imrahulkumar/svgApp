@@ -7,6 +7,8 @@ import { LogComponent } from "./home/log/log.component";
 import { AppRoutingModule } from ".//app-routing.module";
 import { Ng2DraggableModule } from "ng2-draggable";
 import { AngularDraggableModule } from "angular2-draggable";
+import { DataServiceService  } from "./home/msgService/data-service.service";
+
 import {
   NgRedux,
   DevToolsExtension,
@@ -29,7 +31,7 @@ import { IAppState, rootReducer ,INITIAL_STATE} from "./store";
     AngularDraggableModule,
     NgReduxModule
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -2,16 +2,18 @@
 	<div class="transparent-white-container">
 		<div class="container-fluid">
 			<div class="row no-margin">
-				<img [src]="!bulb ? bulboff : bulbon" ngDraggable>
-
+				<img [src]="!bulb ? bulboff : bulbon" [position]= "{ x:xaxis, y:yaxis }"   (endOffset)="onMoving($event)" ngDraggable= "true" >
 				<div class="col-2 col-sm-2 col-lg-2 form-group px-2 px-sm-2 px-md-5">
 					<button class="btn btn-own btn-green" (click)="switch()">
 								Switch
 							</button>
-                 <!-- <p>{{counter| async}}</p> -->
-							
+					<!-- <p>{{counter| async}}</p> -->
+					<br/>
+					<br/>
+					<button (click)="position()"  class="btn btn-own btn-green">Set Position Also</button>
 
-			
+					
+
 				</div>
 			</div>
 		</div>
